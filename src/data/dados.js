@@ -1,7 +1,7 @@
 export const dados = {
-  nome: "Lucas",
+  nome: "Lucas Sousa",
   curso: "Análise e Desenvolvimento de Sistemas",
-  bio: "Estudante de ADS apaixonado por desenvolvimento web e mobile...",
+  bio: "Sou estudante de ADS e estou construindo minha trajetória na área de tecnologia. Aqui você encontra os projetos que desenvolvo durante o curso, com foco em desenvolvimento web e mobile.",
   foto: import.meta.env.BASE_URL + "foto.jpg",
 
   sobre: {
@@ -13,16 +13,16 @@ export const dados = {
 
   contato: {
     email: "lucasonp3@gmail.com",
-    github: "",
-    linkedin: "",
+    github: "https://github.com/sacus1703",
+    linkedin: "https://www.linkedin.com/in/lucas-sousa-b7b393293/",
   },
 
   projetos: [
     {
       id: 1,
-      titulo: "App React Native",
-      descricao: "Aplicativo mobile desenvolvido em React Native.",
-      link: "#",
+      titulo: "Oficina App",
+      descricao: "Aplicativo mobile para gestão de oficina, desenvolvido em React Native com Expo.",
+      link: "https://github.com/sacus1703/oficina-app",
     },
   ],
   videos: [

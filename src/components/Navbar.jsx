@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { useTheme } from '../contexts/ThemeContext.jsx';
+import { useTheme } from '../contexts/ThemeContext';
 
 function Navbar() {
   const { tema, alternarTema } = useTheme();
@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav>
       <div className="nav-links">
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/">Início</NavLink>
         <NavLink to="/sobre">Sobre</NavLink>
         <NavLink to="/projetos">Projetos</NavLink>
         <NavLink to="/videos">Vídeos</NavLink>
