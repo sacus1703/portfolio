@@ -2,7 +2,7 @@ export const dados = {
   nome: "Lucas",
   curso: "Análise e Desenvolvimento de Sistemas",
   bio: "Estudante de ADS apaixonado por desenvolvimento web e mobile...",
-  foto: "/foto.jpg",
+  foto: import.meta.env.BASE_URL + "foto.jpg",
 
   sobre: {
     descricao: "Sou estudante de Análise e Desenvolvimento de Sistemas, com interesse em desenvolvimento web e mobile. Estou construindo meu portfólio para registrar minha evolução e compartilhar os projetos que desenvolvo ao longo do curso.",
