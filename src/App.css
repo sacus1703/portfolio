@@ -1,0 +1,495 @@
+/* ============================================
+   TEMA CLARO (padrão)
+   ============================================ */
+:root,
+[data-tema="claro"] {
+  --cor-primaria: #8b5cf6;
+  --cor-primaria-hover: #7c3aed;
+  --cor-primaria-clara: #ede9fe;
+
+  --cor-fundo: #f5f5f7;
+  --cor-superficie: #ffffff;
+
+  --cor-texto: #1f1f29;
+  --cor-texto-secundario: #5b5b6b;
+  --cor-borda: #e5e5ea;
+
+  --sombra-suave: 0 2px 8px rgba(31, 31, 41, 0.06);
+  --sombra-media: 0 4px 12px rgba(31, 31, 41, 0.10);
+
+  --raio: 10px;
+}
+
+/* ============================================
+   TEMA ESCURO
+   ============================================ */
+[data-tema="escuro"] {
+  --cor-primaria: #a78bfa;
+  --cor-primaria-hover: #c4b5fd;
+  --cor-primaria-clara: #2e1065;
+
+  --cor-fundo: #0f0f14;
+  --cor-superficie: #1a1a23;
+
+  --cor-texto: #f0f0f5;
+  --cor-texto-secundario: #b0b0bd;
+  --cor-borda: #2a2a35;
+
+  --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --sombra-media: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  --raio: 10px;
+}
+
+/* ============================================
+   RESET E BASE
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+nav {
+  background-color: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+nav a {
+  color: var(--cor-texto-secundario);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--cor-primaria-clara);
+  color: var(--cor-primaria-hover);
+  outline: none;
+}
+
+nav a.active {
+  background-color: var(--cor-primaria);
+  color: #0f0f14;
+}
+
+/* Botão de tema */
+.btn-tema {
+  background-color: transparent;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  font-size: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.btn-tema:hover,
+.btn-tema:focus {
+  background-color: var(--cor-primaria-clara);
+  transform: rotate(20deg);
+  outline: none;
+}
+
+/* ============================================
+   MAIN
+   ============================================ */
+main {
+  padding: 1.5rem 1rem;
+  min-height: 80vh;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+  color: var(--cor-texto);
+}
+
+main h1 {
+  border-left: 5px solid var(--cor-primaria);
+  padding-left: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto-secundario);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+/* ============================================
+   GRID RESPONSIVO
+   ============================================ */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ============================================
+   CARD
+   ============================================ */
+.card {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.5rem;
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-media);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  color: var(--cor-texto);
+}
+
+.card p {
+  color: var(--cor-texto-secundario);
+  font-size: 1rem;
+  flex-grow: 1;
+}
+
+.card a {
+  display: inline-block;
+  background-color: var(--cor-primaria);
+  color: #0f0f14;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+}
+
+.card a:hover,
+.card a:focus {
+  background-color: var(--cor-primaria-hover);
+  outline: none;
+}
+
+/* ============================================
+   HOME / HERO
+   ============================================ */
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--cor-primaria-clara) 0%, var(--cor-superficie) 100%);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  padding: 2rem 1.5rem;
+  border-radius: var(--raio);
+  text-align: center;
+  box-shadow: var(--sombra-suave);
+}
+
+.hero h1 {
+  color: var(--cor-texto);
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
+  border: none;
+  padding: 0;
+}
+
+.hero .subtitulo {
+  color: var(--cor-primaria-hover);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero .bio {
+  color: var(--cor-texto-secundario);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.7;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+.acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.acoes a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+  min-width: 200px;
+  text-align: center;
+}
+
+.botao-primario {
+  background-color: var(--cor-primaria);
+  color: #0f0f14;
+}
+
+.botao-primario:hover,
+.botao-primario:focus {
+  background-color: var(--cor-primaria-hover);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.botao-secundario {
+  background-color: transparent;
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+}
+
+.botao-secundario:hover,
+.botao-secundario:focus {
+  background-color: var(--cor-primaria);
+  color: #0f0f14;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* ============================================
+   SOBRE
+   ============================================ */
+.sobre-conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  align-items: center;
+}
+
+.sobre-foto img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--cor-primaria);
+  box-shadow: var(--sombra-media);
+}
+
+.sobre-texto {
+  width: 100%;
+}
+
+.sobre-lista {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.sobre-lista li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.sobre-lista strong {
+  color: var(--cor-texto);
+}
+
+/* ============================================
+   CONTATO
+   ============================================ */
+.contato {
+  margin-top: 2.5rem;
+}
+
+.contato h2 {
+  color: var(--cor-texto);
+  border-left: 5px solid var(--cor-primaria);
+  padding-left: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.contato-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contato-links a {
+  display: inline-block;
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid var(--cor-borda);
+  box-shadow: var(--sombra-suave);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.contato-links a:hover,
+.contato-links a:focus {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+  border-color: var(--cor-primaria);
+  outline: none;
+}
+
+.contato-item {
+  display: inline-block;
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 1px solid var(--cor-borda);
+  box-shadow: var(--sombra-suave);
+  user-select: all;
+}
+
+/* ============================================
+   AJUSTES FINAIS
+   ============================================ */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--cor-primaria);
+  color: #0f0f14;
+  padding: 0.75rem 1rem;
+  z-index: 999;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+/* ============================================
+   TRANSIÇÃO SUAVE AO TROCAR DE TEMA
+   ============================================ */
+body,
+nav,
+footer,
+.hero,
+.card,
+.contato-links a,
+.contato-item {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+@media (min-width: 600px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    flex: 1;
+    justify-content: center;
+  }
+
+  main {
+    padding: 2rem;
+  }
+
+  .hero {
+    padding: 3rem 2rem;
+  }
+
+  .acoes {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .sobre-conteudo {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .sobre-foto {
+    flex-shrink: 0;
+  }
+
+  .sobre-foto img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    padding: 3rem 2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
