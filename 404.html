@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecionando...</title>
+    <script>
+      // Salva a rota que o usuário tentou acessar e volta para a raiz
+      sessionStorage.setItem('redirect', window.location.pathname);
+      window.location.replace('/portfolio/');
+    </script>
+  </head>
+  <body>
+    Redirecionando...
+  </body>
+</html>
