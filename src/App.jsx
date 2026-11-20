@@ -1,19 +1,24 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './contexts/ThemeContext';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Sobre from './pages/Sobre';
-import Projetos from './pages/Projetos';
-import Videos from './pages/Videos';
-import Apresentacoes from './pages/Apresentacoes';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import ScrollToTop from "./components/ScrollToTop";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Sobre from "./pages/Sobre";
+import Projetos from "./pages/Projetos";
+import Videos from "./pages/Videos";
+import Apresentacoes from "./pages/Apresentacoes";
+import NotFound from "./pages/NotFound";
+import "./App.css";
 
 function App() {
   return (
     <ThemeProvider>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <a href="#main" className="skip-link">Pular para conteúdo</a>
+        <ScrollToTop />
+        <a href="#main" className="skip-link">
+          Pular para conteúdo
+        </a>
         <Navbar />
         <main id="main">
           <Routes>
@@ -22,6 +27,7 @@ function App() {
             <Route path="/projetos" element={<Projetos />} />
             <Route path="/videos" element={<Videos />} />
             <Route path="/apresentacoes" element={<Apresentacoes />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />

@@ -1,9 +1,34 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-tema="claro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meu Portfólio</title>
+
+    <title>Lucas Sousa | Portfólio — ADS</title>
+    <meta
+      name="description"
+      content="Portfólio de Lucas Sousa, estudante de Análise e Desenvolvimento de Sistemas. Projetos de desenvolvimento web e mobile."
+    />
+    <meta name="author" content="Lucas Sousa" />
+
+    <!-- Favicon (opcional — crie um favicon.svg em /public) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Anti-flash: aplica o tema salvo ANTES do React renderizar -->
+    <script>
+      (function () {
+        try {
+          const salvo = localStorage.getItem("tema");
+          const prefereEscuro = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          const tema = salvo || (prefereEscuro ? "escuro" : "claro");
+          document.documentElement.setAttribute("data-tema", tema);
+        } catch (e) {
+          // Se localStorage falhar, mantém o padrão "claro"
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

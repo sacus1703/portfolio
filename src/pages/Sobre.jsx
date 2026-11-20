@@ -1,4 +1,4 @@
-import { dados } from '../data/dados';
+import { dados } from "../data/dados";
 
 function Sobre() {
   return (
@@ -14,34 +14,55 @@ function Sobre() {
           <p>{dados.sobre.descricao}</p>
 
           <ul className="sobre-lista">
-            <li><strong>Formação:</strong> {dados.sobre.formacao}</li>
-            <li><strong>Cidade:</strong> {dados.sobre.cidade}</li>
+            <li>
+              <strong>Formação:</strong> {dados.sobre.formacao}
+            </li>
+            <li>
+              <strong>Cidade:</strong> {dados.sobre.cidade}
+            </li>
             <li>
               <strong>Interesses:</strong>{" "}
               {dados.sobre.interesses.join(", ")}
             </li>
+            {dados.habilidades?.length > 0 && (
+              <li>
+                <strong>Habilidades:</strong>{" "}
+                {dados.habilidades.join(", ")}
+              </li>
+            )}
           </ul>
         </div>
       </div>
 
       <section className="contato">
-  <h2>Contato</h2>
-  <div className="contato-links">
-    {dados.contato.email && (
-      <span className="contato-item">📧 {dados.contato.email}</span>
-    )}
-    {dados.contato.github && (
-      <a href={dados.contato.github} target="_blank" rel="noopener noreferrer">
-        💻 GitHub
-      </a>
-    )}
-    {dados.contato.linkedin && (
-      <a href={dados.contato.linkedin} target="_blank" rel="noopener noreferrer">
-        🔗 LinkedIn
-      </a>
-    )}
-  </div>
-</section>
+        <h2>Contato</h2>
+
+        <address className="contato-links">
+          {dados.contato.email && (
+            <a href={`mailto:${dados.contato.email}`}>
+              📧 {dados.contato.email}
+            </a>
+          )}
+          {dados.contato.github && (
+            <a
+              href={dados.contato.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              💻 GitHub
+            </a>
+          )}
+          {dados.contato.linkedin && (
+            <a
+              href={dados.contato.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🔗 LinkedIn
+            </a>
+          )}
+        </address>
+      </section>
     </div>
   );
 }

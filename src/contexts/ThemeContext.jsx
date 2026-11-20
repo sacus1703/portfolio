@@ -1,24 +1,30 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from "react";
 
-const ThemeContext = createContext();
+const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
   const [tema, setTema] = useState(() => {
-    const salvo = localStorage.getItem('tema');
+    // Lê o que o script inline já aplicou no <html>
+    const aplicado = document.documentElement.getAttribute("data-tema");
+    if (aplicado) return aplicado;
+
+    // Fallback (caso o script não tenha rodado por algum motivo)
+    const salvo = localStorage.getItem("tema");
     if (salvo) return salvo;
 
-    // Se o SO do usuário prefere dark, respeita
-    const prefereEscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return prefereEscuro ? 'escuro' : 'claro';
+    const prefereEscuro = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    return prefereEscuro ? "escuro" : "claro";
   });
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-tema', tema);
-    localStorage.setItem('tema', tema);
+    document.documentElement.setAttribute("data-tema", tema);
+    localStorage.setItem("tema", tema);
   }, [tema]);
 
   function alternarTema() {
-    setTema((atual) => (atual === 'claro' ? 'escuro' : 'claro'));
+    setTema((atual) => (atual === "claro" ? "escuro" : "claro"));
   }
 
   return (
@@ -29,5 +35,9 @@ export function ThemeProvider({ children }) {
 }
 
 export function useTheme() {
-  return useContext(ThemeContext);
+  const ctx = useContext(ThemeContext);
+  if (!ctx) {
+    throw new Error("useTheme precisa estar dentro de ThemeProvider");
+  }
+  return ctx;
 }

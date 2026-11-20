@@ -1,15 +1,25 @@
 export const dados = {
   nome: "Lucas Sousa",
   curso: "Análise e Desenvolvimento de Sistemas",
-  bio: "Sou estudante de ADS e estou construindo minha trajetória na área de tecnologia. Aqui você encontra os projetos que desenvolvo durante o curso, com foco em desenvolvimento web e mobile.",
+  bio: "Estudante de ADS em Aracaju-SE, focado em desenvolvimento web e mobile. Este portfólio reúne os projetos que desenvolvo ao longo do curso.",
   foto: import.meta.env.BASE_URL + "foto.jpg",
 
   sobre: {
-    descricao: "Sou estudante de Análise e Desenvolvimento de Sistemas, com interesse em desenvolvimento web e mobile. Estou construindo meu portfólio para registrar minha evolução e compartilhar os projetos que desenvolvo ao longo do curso.",
+    descricao:
+      "Sou estudante de Análise e Desenvolvimento de Sistemas e estou construindo minha trajetória na área de tecnologia. Tenho interesse especial por desenvolvimento web e mobile, e uso este espaço para registrar minha evolução, compartilhar projetos e refletir sobre o que aprendo a cada etapa do curso.",
     formacao: "Cursando Análise e Desenvolvimento de Sistemas",
     cidade: "Aracaju - SE",
     interesses: ["Desenvolvimento Web", "React", "React Native", "UI/UX"],
   },
+
+  habilidades: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "React Native",
+    "Git",
+  ],
 
   contato: {
     email: "lucasonp3@gmail.com",
@@ -21,22 +31,33 @@ export const dados = {
     {
       id: 1,
       titulo: "Oficina App",
-      descricao: "Aplicativo mobile para gestão de oficina, desenvolvido em React Native com Expo.",
+      periodo: "2025",
+      descricao:
+        "Aplicativo mobile para gestão de oficina, desenvolvido em React Native com Expo.",
+      tecnologias: ["React Native", "Expo", "JavaScript"],
+      aprendizado:
+        "Primeiro projeto mobile do curso. Aprendi a estruturar navegação entre telas, organizar componentes e lidar com o ambiente Expo.",
       link: "https://github.com/sacus1703/oficina-app",
     },
   ],
+
   videos: [
     {
       id: 1,
-      titulo: "Demonstração do App",
-      link: "#",
+      titulo: "Demonstração do Oficina App",
+      descricao:
+        "Vídeo demonstrando as telas e funcionalidades principais do aplicativo.",
+      link: "https://www.youtube.com/shorts/I7VTYyho20s", // ← troque por "https://..." quando publicar
     },
   ],
+
   apresentacoes: [
     {
       id: 1,
       titulo: "Apresentação do Projeto",
-      link: "#",
+      descricao:
+        "Slides de apresentação do Oficina App para a disciplina do curso.",
+      link: null, // ← troque por "https://..." quando publicar
     },
   ],
 };
